@@ -3,7 +3,9 @@ package com.example.monsterincity;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,6 +14,7 @@ import android.view.ViewGroup;
 
 
 import com.example.monsterincity.R;
+import com.example.monsterincity.VISUAL_ACTIVITY_3.Fight;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
@@ -43,18 +46,11 @@ public class MapsFragment extends Fragment implements GoogleMap.OnMarkerClickLis
         public void onMapReady(GoogleMap googleMap) {
             map = googleMap;
 
-
-
-            /*map.setOnMarkerClickListener(this);
-            map.setOnMapClickListener(this);*/
-
-
-
             Bitmap.Config conf = Bitmap.Config.ARGB_8888;
             Bitmap bmp = Bitmap.createBitmap(80, 80, conf);
             markerPerth = map.addMarker(new MarkerOptions().position(PERTH).title("Perth"));
             markerPerth.setTag(0);
-            //map.setOnMarkerClickListener(this);
+            map.setOnMarkerClickListener(click);
         }
     };
 
@@ -83,5 +79,14 @@ public class MapsFragment extends Fragment implements GoogleMap.OnMarkerClickLis
     public boolean onMarkerClick(Marker marker) {
         return false;
     }
+
+    GoogleMap.OnMarkerClickListener click = new GoogleMap.OnMarkerClickListener() {
+        @Override
+        public boolean onMarkerClick(@NonNull Marker marker) {
+
+            //Navigation.findNavController(this).navigate(R.id.action_quest_to_fight);
+            return true;
+        }
+    };
 
 }

@@ -20,5 +20,6 @@ public class LoginActivity extends AppCompatActivity {
         NavController navController = navHostFragment.getNavController();
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
 
+
     }
 }

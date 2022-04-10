@@ -23,9 +23,23 @@ public class UserDAO extends DAOBase {
 
     public UserDAO(Context pContext) {
         super(pContext);
-        /*fakeData();*/
+        testUsers();
     }
 
+    public void testUsers() {
+        ArrayList<User> allUser = new ArrayList<User>();
+        this.open();
+        Cursor unCurseur = mDb.rawQuery("SELECT * FROM User;", null);
+        if (unCurseur.moveToFirst()) {
+
+        }
+        else
+        {
+            createUser();
+        }
+        this.close();
+
+    }
 
     public void add(User user) {
 
@@ -94,6 +108,10 @@ public class UserDAO extends DAOBase {
             while (unCurseur.moveToNext());
             Collections.shuffle(allUser);
         }
+        else
+        {
+            createUser();
+        }
         this.close();
         return allUser;
 
@@ -111,9 +129,22 @@ public class UserDAO extends DAOBase {
             user.setIdUser(unCurseur.getInt(unCurseur.getColumnIndex(idUser)));
             user.setPseudo(unCurseur.getString(unCurseur.getColumnIndex(pseudo)));
         }
+        else
+        {
+            User user2 = new User("a","a" );
+            add(user2);
+        }
 
         this.close();
         return user;
+    }
+
+    public void createUser(){
+
+        this.open();
+        User user2 = new User("a","a" );
+        add(user2);
+        this.close();
     }
 
     /**
