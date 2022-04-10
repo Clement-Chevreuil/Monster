@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".VISUAL_ACTIVITY_1.Login">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background">
+
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            tools:context=".ACTIVITY.MainActivity"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/titre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:text="Monster In City"
+                android:textColor="#000000"
+                android:textSize="25sp"
+                app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+
+            <LinearLayout
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:background="#54FFFFFF"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+
+                <EditText
+                    android:id="@+id/login_pseudo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:hint="Pseudo :"
+                    android:inputType="textPersonName" />
+
+                <EditText
+                    android:id="@+id/login_password"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:hint="Mot De Passe :"
+                    android:inputType="textPassword" />
+
+                <Button
+                    android:id="@+id/login_connexion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#551919"
+                    android:text="Connexion" />
+
+                <Button
+                    android:id="@+id/login_inscription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="inscription" />
+
+                <TextView
+                    android:id="@+id/erreur"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textColor="#6d0000"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>

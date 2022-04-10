@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/mapsFragment">
+
+    <fragment
+        android:id="@+id/mapsFragment"
+        android:name="com.example.monsterincity.MapsFragment"
+        android:label="fragment_maps"
+        tools:layout="@layout/fragment_maps" >
+        <action
+            android:id="@+id/action_mapsFragment_to_fight"
+            app:destination="@id/fight" />
+    </fragment>
+    <fragment
+        android:id="@+id/shopFragment"
+        android:name="com.example.monsterincity.VISUAL_ACTIVITY_2.ShopFragment"
+        android:label="fragment_shop"
+        tools:layout="@layout/fragment_shop" >
+        <action
+            android:id="@+id/action_shopFragment_to_objet_Detail"
+            app:destination="@id/objet_Detail" />
+    </fragment>
+    <fragment
+        android:id="@+id/characterFragment"
+        android:name="com.example.monsterincity.VISUAL_ACTIVITY_2.CharacterFragment"
+        android:label="fragment_character"
+        tools:layout="@layout/fragment_character" >
+        <action
+            android:id="@+id/action_characterFragment_to_equipment"
+            app:destination="@id/equipment" />
+    </fragment>
+    <activity
+        android:id="@+id/fight"
+        android:name="com.example.monsterincity.VISUAL_ACTIVITY_3.Fight"
+        android:label="activity_fight"
+        tools:layout="@layout/activity_fight" />
+    <fragment
+        android:id="@+id/objet_Detail"
+        android:name="com.example.monsterincity.VISUAL_ACTIVITY_2.Objet_Detail"
+        android:label="fragment_objet__detail"
+        tools:layout="@layout/fragment_objet__detail" />
+    <fragment
+        android:id="@+id/equipment"
+        android:name="com.example.monsterincity.VISUAL_ACTIVITY_2.Equipment"
+        android:label="fragment_equipment"
+        tools:layout="@layout/fragment_equipment" />
+</navigation>
